@@ -7,8 +7,8 @@ Far comparire gli indirizzi email solamente quando sono stati tutti generati. */
 
 const { createApp } = Vue
 
-
 createApp({
+
     data() {
         return {
             emails:[],
@@ -18,20 +18,25 @@ createApp({
 
     methods: {
         getRandomEmail(){
+
+            //genero dieci email 
             for(let i = 0; i < 10; i++) {
+
+                //ricevo la mail generata dall'Api tramite ajax call per mezzo di axios e metodo GET
                  axios.get(this.apiUrl)
                  .then(response => {
-                    this.emails.push({mail: response.data.response})
-                    console.log(response.data.response)
-            });
-         }
+
+                    //insersco le mail nel mio array
+                    this.emails.push(response.data.response);
+                 });
+            }
         },
     },
     
     mounted() {
         this.getRandomEmail();
-        
     },
+
 }).mount('#app')
 
 

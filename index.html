@@ -23,9 +23,12 @@
                 <h1 class="fw-bold mb-">Lista Email:</h1>
                 <div class="col-12  d-flex justify-content-center align-center">
 
+                    <!-- creo una condizione per cui se le email non sono state generate non sono visibili -->
                     <ul class="list-group my-4" v-if="emails.length === 10">
+
+                        <!-- itero nel mio array di oggetti per stampare le mail -->
                         <li class="list-group-item list-group-item-action" v-for="mail in emails">
-                            <p class="fs-4">{{mail.mail}}</p>
+                            <p class="fs-4">{{mail}}</p>
                         </li>
                     </ul>
                 </div>
