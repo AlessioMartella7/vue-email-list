@@ -22,7 +22,8 @@
             <div class="row mt-4 text-center">
                 <h1 class="fw-bold mb-">Lista Email:</h1>
                 <div class="col-12  d-flex justify-content-center align-center">
-                    <ul class="list-group ">
+
+                    <ul class="list-group my-4" v-if="emails.length === 10">
                         <li class="list-group-item list-group-item-action" v-for="mail in emails">
                             <p class="fs-4">{{mail.mail}}</p>
                         </li>

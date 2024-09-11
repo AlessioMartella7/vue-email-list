@@ -27,6 +27,7 @@ createApp({
          }
         },
     },
+    
     mounted() {
         this.getRandomEmail();
         
