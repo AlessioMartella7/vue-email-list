@@ -11,18 +11,20 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            email:'',
+            emails:[],
             apiUrl:'https://flynn.boolean.careers/exercises/api/random/mail', 
         }
     },
 
     methods: {
         getRandomEmail(){
-            axios.get(this.apiUrl)
-            .then(response => {
-                this.email = response.data.response;
-                console.log(response.data.response)
+            for(let i = 0; i < 10; i++) {
+                 axios.get(this.apiUrl)
+                 .then(response => {
+                    this.emails.push({mail: response.data.response})
+                    console.log(response.data.response)
             });
+         }
         },
     },
     mounted() {
